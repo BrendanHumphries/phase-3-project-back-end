@@ -14,8 +14,7 @@ class CustomersController < ApplicationController
            customer_id: JSON.parse(customer)['id'],
            plane_id: params[:plane_id],
            seat_number: params[:seat_number]
-           
-       )
+       ).to_json(include: :customer)
     end
 
     delete '/customers/:id' do 
